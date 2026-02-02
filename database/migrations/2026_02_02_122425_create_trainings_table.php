@@ -13,7 +13,9 @@ return new class extends Migration {
         Schema::create('trainings', function (Blueprint $table) {
             $table->id();
             $table->foreignId('team_id')->constrained()->cascadeOnDelete();
-            $table->dateTime('starts_at');
+            $table->date('date');
+            $table->time('start_time');
+            $table->time('end_time')->nullable();
             $table->string('location')->nullable();
             $table->text('notes')->nullable();
             $table->timestamps();
