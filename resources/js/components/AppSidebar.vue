@@ -14,44 +14,19 @@ import {
 import { dashboard } from '@/routes';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/vue3';
-import { route } from 'ziggy-js';
 import { BookOpen, Folder, LayoutGrid, Trophy, Users, User } from 'lucide-vue-next';
 import AppLogo from './AppLogo.vue';
 
 const mainNavItems: NavItem[] = [
-    {
-        title: 'Dashboard',
-        href: dashboard(),
-        icon: LayoutGrid,
-    },
-    {
-        title: 'Sports',
-        href: route('sports.index'),
-        icon: Trophy,
-    },
-    {
-        title: 'Teams',
-        href: route('teams.index'),
-        icon: Users,
-    },
-    {
-        title: 'Players',
-        href: route('players.index'),
-        icon: User,
-    },
+    { title: 'Dashboard', href: dashboard(), icon: LayoutGrid },
+    { title: 'Sports', href: '/sports', icon: Trophy },
+    { title: 'Teams', href: '/teams', icon: Users },
+    { title: 'Players', href: '/players', icon: User },
 ];
 
 const footerNavItems: NavItem[] = [
-    {
-        title: 'Github Repo',
-        href: 'https://github.com/laravel/vue-starter-kit',
-        icon: Folder,
-    },
-    {
-        title: 'Documentation',
-        href: 'https://laravel.com/docs/starter-kits#vue',
-        icon: BookOpen,
-    },
+    { title: 'Github Repo', href: 'https://github.com/laravel/vue-starter-kit', icon: Folder },
+    { title: 'Documentation', href: 'https://laravel.com/docs/starter-kits#vue', icon: BookOpen },
 ];
 </script>
 
@@ -78,5 +53,6 @@ const footerNavItems: NavItem[] = [
             <NavUser />
         </SidebarFooter>
     </Sidebar>
+
     <slot />
 </template>
